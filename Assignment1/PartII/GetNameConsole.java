@@ -6,5 +6,7 @@ public class GetNameConsole {
 		System.out.print("Enter your name: ");
 		Scanner in = new Scanner(System.in);
 		String name = in.nextLine();
+		in.close();
+		System.out.format("Hello, %s\n", name);
 	}
 }

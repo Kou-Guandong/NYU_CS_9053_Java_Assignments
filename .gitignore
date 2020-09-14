@@ -2,3 +2,4 @@
 test*
 **/*.class
 **/*.pdf
+*.zip

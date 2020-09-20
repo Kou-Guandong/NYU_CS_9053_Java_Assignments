@@ -5,24 +5,35 @@
 public class SumZeroToOneHundredSkipTens {
 
 	public static void main(String[] args) {
-		
+
 		// you can use any kind of loop you want
 		// have a counter that counts from 0 to 100
-		
+
 		int sum = 0;
-		
-		// the first loop has the structure of 
+
+		// the first loop has the structure of
 		// if (counter is not divisible by 10)
 		// then
-		//    sum += counter;
-		
+		// sum += counter;
+		for (int val = 0; val <= 100; val++) {
+			if (val % 10 != 0) {
+				sum += val;
+			}
+		}
+		System.out.println(sum);
 		sum = 0;
 		// the second loop has the structure of:
 		// if (counter is divisible by 10)
 		// then
-		//  continue
+		// continue
 		// and then it adds the counter to the sum if that condition does not execute
-		
+		for (int val = 0; val <= 100; val++) {
+			if (val % 10 == 0) {
+				continue;
+			}
+			sum += val;
+		}
+		System.out.println(sum);
+
 	}
 }
-

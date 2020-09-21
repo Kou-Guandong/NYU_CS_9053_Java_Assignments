@@ -9,7 +9,7 @@ public class MuayThai {
 		} else if (weight >= 220) {
 			return 220;
 		} else if (weight >= 190) {
-			return 140;
+			return 190;
 		} else if (weight >= 183) {
 			return 183;
 		} else if (weight >= 175) {

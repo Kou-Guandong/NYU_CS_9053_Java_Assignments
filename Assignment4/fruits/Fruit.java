@@ -11,8 +11,8 @@ public class Fruit {
     }
 
     public Fruit(String color, Boolean rotten) {
-        this.color = color;
-        this.rotten = rotten;
+        this.setColor(color);
+        this.setRotten(rotten);
     }
 
     public String getColor() {
@@ -37,6 +37,11 @@ public class Fruit {
 
     public String toString() {
         return "This is a/an " + this.getClass().getSimpleName() + " with " + this.color + " color and id: " + this.id;
+    }
+
+    public Boolean equals(Fruit fruit) {
+        return this.getClass().equals(fruit.getClass()) && this.getColor().equals(fruit.getColor())
+                && this.isRotten() == fruit.isRotten();
     }
 
     public static void main(String[] args) {

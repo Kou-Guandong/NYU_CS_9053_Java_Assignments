@@ -10,7 +10,7 @@ class Citrus extends Fruit {
 
     public Citrus(String taste, String color, Boolean rotten) {
         super(color, rotten);
-        this.taste = taste;
+        this.setTaste(taste);
     }
 
     public String getTaste() {
@@ -24,6 +24,11 @@ class Citrus extends Fruit {
     public String toString() {
         return "this is a " + this.getTaste() + " " + this.getColor() + (this.isRotten() ? " rotten " : " raw ")
                 + "citrus with id: " + this.getId();
+    }
+
+    public Boolean equals(Citrus citrus) {
+        return this.getClass().equals(citrus.getClass()) && this.getColor().equals(citrus.getColor())
+                && this.isRotten() == citrus.isRotten() && this.getTaste().equals(citrus.getTaste());
     }
 
     // for debug purpose only

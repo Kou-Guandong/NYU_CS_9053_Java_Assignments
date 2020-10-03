@@ -10,8 +10,8 @@ class Apple extends Fruit {
 
     public Apple(String taste, String texture, String color, Boolean rotten) {
         super(color, rotten);
-        this.taste = taste;
-        this.texture = texture;
+        this.setTaste(taste);
+        this.setTexture(texture);
     }
 
     public String getTaste() {
@@ -28,6 +28,12 @@ class Apple extends Fruit {
 
     public void setTexture(String texture) {
         this.texture = texture;
+    }
+
+    public Boolean equals(Apple apple) {
+        return this.getClass().equals(apple.getClass()) && this.getColor().equals(apple.getColor())
+                && this.isRotten() == apple.isRotten() && this.getTaste().equals(apple.getTaste())
+                && this.getTexture().equals(apple.getTexture());
     }
 
 }

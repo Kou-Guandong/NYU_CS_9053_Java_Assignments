@@ -8,9 +8,9 @@ public class Lemon extends Citrus {
     }
 
     public Lemon(int sourness, String taste, Boolean rotten) {
+        super(taste, "yellow", rotten);
         this.setSourness(sourness);
-        this.setTaste(taste);
-        this.setRotten(rotten);
+
     }
 
     public int getSourness() {
@@ -19,6 +19,12 @@ public class Lemon extends Citrus {
 
     public void setSourness(int sourness) {
         this.sourness = sourness;
+    }
+
+    public Boolean equals(Lemon lemon) {
+        return this.getClass().equals(lemon.getClass()) && this.getColor().equals(lemon.getColor())
+                && this.isRotten() == lemon.isRotten() && this.getTaste().equals(lemon.getTaste())
+                && this.getSourness() == lemon.getSourness();
     }
 
 }

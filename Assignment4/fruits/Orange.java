@@ -1,7 +1,5 @@
 package fruits;
 
-import jdk.internal.jshell.tool.resources.l10n;
-
 public class Orange extends Citrus {
     private String type;
 
@@ -10,8 +8,8 @@ public class Orange extends Citrus {
     }
 
     public Orange(String type, String taste, Boolean rotten) {
+        super(taste, "orange", rotten);
         this.setType(type);
-        this.setTaste(taste);
         this.setRotten(rotten);
     }
 
@@ -26,6 +24,12 @@ public class Orange extends Citrus {
     public String toString() {
         return "this is a " + this.getTaste() + (this.isRotten() ? " rotten " : " raw ") + this.type + " with id: "
                 + this.getId();
+    }
+
+    public Boolean equals(Orange orange) {
+        return this.getClass().equals(orange.getClass()) && this.getColor().equals(orange.getColor())
+                && this.isRotten() == orange.isRotten() && this.getTaste().equals(orange.getTaste())
+                && this.getType().equals(orange.getType());
     }
 
     // for debug purpose only

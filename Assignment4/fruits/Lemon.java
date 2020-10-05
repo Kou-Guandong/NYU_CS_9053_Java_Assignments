@@ -10,7 +10,6 @@ public class Lemon extends Citrus {
     public Lemon(int sourness, String taste, Boolean rotten) {
         super(taste, "yellow", rotten);
         this.setSourness(sourness);
-
     }
 
     public int getSourness() {

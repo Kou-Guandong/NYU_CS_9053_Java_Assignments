@@ -1,6 +1,6 @@
 package fruits;
 
-class Apple extends Fruit {
+public class Apple extends Fruit {
     private String texture;
     private String taste;
 

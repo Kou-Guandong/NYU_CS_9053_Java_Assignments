@@ -1,6 +1,6 @@
 package fruits;
 
-class Citrus extends Fruit {
+public class Citrus extends Fruit {
 
     private String taste;
 

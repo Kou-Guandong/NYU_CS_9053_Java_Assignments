@@ -87,7 +87,7 @@ public class ListOfNumbers {
         ListOfNumbers listOfNumbers = new ListOfNumbers("numberfile.txt");
         ListOfNumbers.cat("numberfile.txt");
         listOfNumbers.readList();
-    	listOfNumbers.writeList();
+        listOfNumbers.writeList();
     }
 
 }

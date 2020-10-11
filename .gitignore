@@ -4,3 +4,4 @@ test*
 **/*.pdf
 *.zip
 Lecture*
+**/*.pages

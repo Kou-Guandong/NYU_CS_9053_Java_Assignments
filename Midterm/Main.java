@@ -1,4 +1,3 @@
-package edu.nyu.cs9053.midterm.hierarchy;
 
 import java.io.*;
 
@@ -17,11 +16,12 @@ class Main {
                 try {
                     Integer c = a / b;
                     System.out.println("result = " + c);
-                } catch (ArithmeticException e) {
+                } catch (ArithmeticException | ArrayIndexOutOfBoundsException | NumberFormatException e) {
                     e.printStackTrace();
                 }
                 inLine = fileInput.readLine();
             }
+            fileInput.close();
         } catch (IOException e) {
             e.printStackTrace();
         } finally {

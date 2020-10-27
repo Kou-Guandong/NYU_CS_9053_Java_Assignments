@@ -37,22 +37,22 @@ public class ComplexNumber extends Number implements Cloneable, Comparable<Numbe
         }
 
         public String multiply(ComplexNumber c2) {
-                double c1Real = this.getReal();
-                double c2Real = c2.getReal();
-                double c1Ima = this.getImaginary();
-                double c2Ima = c2.getImaginary();
-                double real = c1Real * c2Real - c1Ima * c2Ima;
-                double imaginary = c1Ima * c2Real + c1Real * c2Ima;
+                double r1 = this.getReal();
+                double i1 = this.getImaginary();
+                double r2 = c2.getReal();
+                double i2 = c2.getImaginary();
+                double real = r1 * r2 - i1 * i2;
+                double imaginary = i1 * r2 + r1 * i2;
                 return (new ComplexNumber(real, imaginary)).toString();
         }
 
         public String divide(ComplexNumber c2) {
-                double c1Real = this.getReal();
-                double c2Real = c2.getReal();
-                double c1Ima = this.getImaginary();
-                double c2Ima = c2.getImaginary();
-                double real = (c1Real * c2Real + c1Ima * c2Ima) / (c2Real * c2Real + c2Ima * c2Ima);
-                double imaginary = (c1Ima * c2Real - c1Real * c2Ima) / (c2Real * c2Real + c2Ima * c2Ima);
+                double r1 = this.getReal();
+                double i1 = this.getImaginary();
+                double r2 = c2.getReal();
+                double i2 = c2.getImaginary();
+                double real = (r1 * r2 + i1 * i2) / (r2 * r2 + i2 * i2);
+                double imaginary = (i1 * r2 - r1 * i2) / (r2 * r2 + i2 * i2);
                 return (new ComplexNumber(real, imaginary)).toString();
         }
 
@@ -65,7 +65,11 @@ public class ComplexNumber extends Number implements Cloneable, Comparable<Numbe
 
         @Override
         public String toString() {
-                return this.a + " + " + this.b + "i";
+                if (this.b >= 0) {
+                        return this.a + " + " + this.b + "i";
+                } else {
+                        return this.a + " - " + -this.b + "i";
+                }
         }
 
         @Override

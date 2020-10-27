@@ -8,7 +8,7 @@ public class SimpleAddition extends JFrame {
     JPanel textPanel, panelForTextFields, completionPanel;
     JLabel titleLabel, addend1Label, addend2Label, sumLabel;
     JTextField addend1Field, addend2Field;
-    JLabel sumField;
+    JLabel sumField, prodField;
     JButton quitButton;
     private double addend1, addend2, sum;
 
@@ -94,11 +94,13 @@ public class SimpleAddition extends JFrame {
 
     private class InputListener implements ActionListener {
 
+        @Override
         public void actionPerformed(ActionEvent e) {
-            // System.out.println("Even captured");
-            Double addend1 = Double.valueOf(addend1Field.getText());
-            Double addend2 = Double.valueOf(addend2Field.getText());
-            sumField.setText(Double.toString(addend1 + addend2));
+            System.out.println("Even captured");
+            addend1 = Double.valueOf(addend1Field.getText());
+            addend2 = Double.valueOf(addend2Field.getText());
+            sum = addend1 + addend2;
+            sumField.setText(Double.toString(sum));
         }
     }
 

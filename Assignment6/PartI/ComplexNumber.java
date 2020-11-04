@@ -24,6 +24,13 @@ public class ComplexNumber extends Number implements Cloneable, Comparable<Numbe
                 return this.b;
         }
 
+        public String abs() {
+                double real = this.getReal();
+                double imaginary = this.getImaginary();
+                double result = Math.sqrt(real * real + imaginary * imaginary);
+                return String.valueOf(result);
+        }
+
         public String add(ComplexNumber c2) {
                 double real = this.getReal() + c2.getReal();
                 double imaginary = this.getImaginary() + c2.getImaginary();
@@ -55,14 +62,7 @@ public class ComplexNumber extends Number implements Cloneable, Comparable<Numbe
                 double imaginary = (i1 * r2 - r1 * i2) / (r2 * r2 + i2 * i2);
                 return (new ComplexNumber(real, imaginary)).toString();
         }
-
-        public String abs() {
-                double real = this.getReal();
-                double imaginary = this.getImaginary();
-                double result = Math.sqrt(real * real + imaginary * imaginary);
-                return String.valueOf(result);
-        }
-
+        
         @Override
         public String toString() {
                 if (this.b >= 0) {
